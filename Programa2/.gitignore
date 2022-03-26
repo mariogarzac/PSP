@@ -1,0 +1,12 @@
+
+#Ignore all text files
+*.txt
+
+# macOS Files
+.DS_Store
+
+#pycache
+__pycache__/
+
+#Folders
+TestCases
