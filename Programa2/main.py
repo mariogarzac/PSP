@@ -9,7 +9,6 @@
 
 
 import queue
-import os
 from Lector import Lector
 from Verificador import Verificador
 
@@ -17,30 +16,27 @@ from Verificador import Verificador
 # MAIN DEL PROGRAMA
 def main():
 
-    answer = "y"
     ver = Verificador()
     lec = Lector()
     #Queue para ir almacenado los valores de cada archivo
     order = queue.Queue() 
-    verify = False  
     
-    while(answer == "y"):
+    print("-------------------------------------------")
+    print("-Para terminar la ejecución escribir exit -")
+    print("-------------------------------------------")
+    fileName = input("Nombre del archivo para leer: ")
+    while(fileName != "exit"):
 
-        fileName = input("Nombre del archivo para leer: ")
         # Verifica que el archivo esté en el mismo directorio
         # Si está, lo leerá y contará las líneas
-        if(ver.verifica(fileName)):
-            verify = True
+        if(fileName != "" and ver.verifica(fileName)):            
             order.put(lec.procesarArchivo(fileName))
+        fileName = input("Nombre del archivo para leer: ")
                 
-        answer = input("Seguir leyendo archivos? (y/n): ")                
-        while(not (answer == "y" or answer == "n")):
-         answer = input("Seguir leyendo archivos? (y/n): ") 
-    
     #Ordenará e imprimirá los valores
-    if (verify):
+    if (fileName == "exit"):
         lec.calculateClass(order)
-    cerrar = input("Presiona ENTER para cerrar: ")
+    input("Presiona ENTER para cerrar: ")
 
 
 if __name__ == "__main__":
