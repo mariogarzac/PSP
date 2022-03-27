@@ -3,11 +3,16 @@
 
 #Folders
 TestCases
+dist
+build
 
 #pycache
 __pycache__
 
 #Text Files
 *.txt
+
+#spec
+*.spec
 
 #git ls-files --deleted -z | git update-index --assume-unchanged -z --stdin
