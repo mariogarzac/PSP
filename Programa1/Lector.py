@@ -17,19 +17,14 @@ class Lector:
     #.i
     def procesarArchivo(self, fileName):
         # variables para contar codigo, comentarios y líneas en blanco
-        lineasConCodigo = 0
-        lineasConComentario = 0
-        lineasEnBlanco = 0
-        lineasTotales = 0
+        lineasConCodigo = lineasConComentario = lineasEnBlanco = lineasTotales = 0
         line = " "
 
         # Ciclo para leer la cantidad de lineas
         with open(fileName, "r") as arch:
             while (line := arch.readline()):                
                 lineasTotales += 1
-                if ('//' in line or '/*' in line or '* ' in line or '*/' in line):
-                    lineasConComentario += 1
-                elif ('#' in line):
+                if ('#' in line):
                     lineasConComentario += 1
                 elif (not re.search(r'[\S+/]', line)):
                     lineasEnBlanco += 1

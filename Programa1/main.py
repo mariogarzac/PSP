@@ -27,7 +27,7 @@ def main():
     if(ver.verifica(fileName)):
         lec.procesarArchivo(fileName)
 
-
-
+    input("Presiona ENTER para cerrar. ")
+    
 if __name__ == "__main__":
     main()
