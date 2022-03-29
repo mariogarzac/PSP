@@ -14,6 +14,7 @@ import re
 # CLASE LECTOR PARA LEER Y PROCESAR LOS ARCHIVOS EN CASO DE QUE EXISTAN
 class Lector:
     # Función para leer el archivo y procesar
+    #.i
     def procesarArchivo(self, fileName):
         # variables para contar codigo, comentarios y líneas en blanco
         ldcTotal = 0
@@ -56,6 +57,7 @@ class Lector:
         return data
 
     #Función auxiliar para hacer el código de procesarArchivo más limpio
+    #.i
     def getNumber(self, line, char):        
         if(f"#.{char}=" in line):                                                                       
             num = int("".join(filter(str.isdigit, line)))            
@@ -64,6 +66,7 @@ class Lector:
             return 1    
 
     #Calcula si es una clase base, nueva o reusada
+    #.i
     def calculateClass(self, order):
         base = queue.Queue()
         nueva = queue.Queue()
@@ -85,6 +88,7 @@ class Lector:
 
     #Función auxiliar para imprimir las clases en sus categorias
     # y también crea y escribe en un archivo .txt
+    #.i
     def prettyPrint(self, base, nueva, reusada):
         total = 0
         file = open("ConteoLDC.txt","w")
