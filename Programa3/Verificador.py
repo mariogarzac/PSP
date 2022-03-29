@@ -3,10 +3,11 @@
 #
 # Mario Garza Chapa A01720245
 #
-# Creado: 16/03/2022
+# Creado: 28/03/2022
 
 import os
 
+#.b=14
 class Verificador:
     # Verifica si el archivo existe o si el archivo está vacío
     # En caso de que no esté vacío, regresará True para que se ejecute

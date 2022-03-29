@@ -1,17 +1,14 @@
 #!/usr/bin/python
 # 
-#  Clase lector que hará todo el procesamiento de los archivos
-#   Esto incluye contar las lineas y sus respectivas bases, items, modificaciones y agregados
-#   al igual que imprimir los resutlados
+# Clase lector que hará todo el procesamiento de los archivos
+# Esto incluye contar las lineas y sus respectivas bases, items, modificaciones y agregados
+# al igual que imprimir los resutlados
 #
 # Mario Garza Chapa A01720245
 #
-# Creado: 25/02/2022
+# Creado: 28/03/2022
 
-#.d=78
-#.m=1
-# CLASE LECTOR PARA LEER Y PROCESAR LOS ARCHIVOS EN CASO DE QUE EXISTAN
-
+#.b=56
 import math
 class Calculador:
     # Función para recibir los elementos calculados

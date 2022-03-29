@@ -4,12 +4,12 @@
 #
 # Mario Garza Chapa A01720245
 #
-# Creado: 23/02/2022
-
+# Creado: 28/03/2022
 
 from Calculador import Calculador
 from Verificador import Verificador
 
+#.b=15
 #.d=8
 #.m=6
 # MAIN DEL PROGRAMA
