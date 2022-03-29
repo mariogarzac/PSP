@@ -1,7 +1,7 @@
 # PSP
 
-Mario Garza Chapa
-A01720245
+### Creados por:
+Mario Garza Chapa | A01720245
 
 
 Repositorio para programas creados durante el curso de Calidad de Software.
