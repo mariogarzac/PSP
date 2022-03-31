@@ -91,7 +91,7 @@ class Lector:
     #.i
     def prettyPrint(self, base, nueva, reusada):
         total = 0
-        file = open("ConteoLDC.txt","w")
+        file = open("/Users/mariogarza/Documents/Programming/Python/PSP/ConteoLDC.txt","w")
 
         print("CLASES BASE:")       
         file.write("CLASES BASE:\n")
@@ -125,3 +125,4 @@ class Lector:
 
         print(f"LDC totales: {total}")
         file.write(f"LDC totales: {total}\n")
+        file.close()
