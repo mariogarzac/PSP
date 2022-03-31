@@ -24,8 +24,9 @@ class Lector:
         ldcItem = 0
         ldcAdd = 0
 
-        claseName = fileName.split('.')
-        claseName = claseName[0].upper()        
+        claseName = fileName.split('/')
+        name = claseName[-1].split('.')
+        name = name[0].upper()     
 
         # Ciclo para leer la cantidad de lineas
         with open(fileName, "r") as arch:
@@ -51,7 +52,7 @@ class Lector:
             arch.close()
 
             ldcAdd = ldcTotal - ldcBase + ldcDel
-            data = [claseName, ldcTotal, ldcItem, ldcBase, ldcDel, ldcMod, ldcAdd]  
+            data = [name, ldcTotal, ldcItem, ldcBase, ldcDel, ldcMod, ldcAdd]  
             
         #regresa el arreglo de cada archivo
         return data
@@ -59,9 +60,8 @@ class Lector:
     #Función auxiliar para hacer el código de procesarArchivo más limpio
     #.i
     def getNumber(self, line, char):        
-        if(f"#.{char}=" in line):                                                                       
-            num = int("".join(filter(str.isdigit, line)))            
-            return num
+        if(f"#.{char}=" in line):                                                                                      
+            return int("".join(filter(str.isdigit, line)))
         else:
             return 1    
 
