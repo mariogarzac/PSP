@@ -95,12 +95,12 @@ class Calculador:
     def prettyPrint(self, values):
         #orden en el arreglo values
         #[n, r, rSquared, b0, b1, yk, xk]
-        print(f"N = {values[0]}")
-        print(f"xk = {values[6]}")
-        print(f"r = {values[1]}")
-        print(f"rSquared = {values[2]}")
-        print(f"b0 = {values[3]}")
-        print(f"b1 = {values[4]}")
-        print(f"yk = {values[5]}")
+        print("N = {}".format(values[0]))
+        print("xk = {}".format(values[6]))
+        print("r = {:.5f}".format(values[1]))
+        print("rSquared = {:.5f}".format(values[2]))
+        print("b0 = {:.5f}".format(values[3]))
+        print("b1 = {:.5f}".format(values[4]))
+        print("yk = {:.5f}".format(values[5]))
 
 
