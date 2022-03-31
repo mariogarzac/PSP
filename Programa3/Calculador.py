@@ -8,7 +8,6 @@
 #
 # Creado: 28/03/2022
 
-#.b=56
 import math
 class Calculador:
     # Función para recibir los elementos calculados
@@ -52,12 +51,12 @@ class Calculador:
         xAvg = sumX/n
         yAvg = sumY/n
         r = self.getR(n, sumX, sumY, xSquared, ySquared, sumXY)
-        rSquared = round(pow(r,2),5)
+        rSquared = pow(r,2)
         b1 = self.getB1(n, xAvg, yAvg, sumXY, xSquared)
         b0 = self.getB0(yAvg, b1, xAvg)
         yk = self.getYk(b0, b1, xk)
 
-        values = [n, r, rSquared, b0, b1, yk, str(xk)]
+        values = [n, r, rSquared, b0, b1, yk, xk]
         return values          
 
     # Calcula r     
@@ -65,35 +64,35 @@ class Calculador:
     def getR(self, n, sumX, sumY, xSquared, ySquared, sumXY):
         top = (n * sumXY) - (sumX * sumY)
         bottom = math.sqrt(((n * xSquared) - (pow(sumX,2))) * ((n * ySquared) - (pow(sumY,2))) )
-        return round(top/bottom,5)
+        return top/bottom
 
     # Calcula b0
     #.i
     def getB0(self,yAvg, b1, xAvg):
-        return round((yAvg - (b1 * xAvg)),5)
+        return (yAvg - (b1 * xAvg))
 
     # Calcula b1
     #.i
     def getB1(self, n, xAvg, yAvg, sumXY, xSquared):
         top = sumXY - (n * xAvg * yAvg)
         bottom = xSquared - (n * pow(xAvg,2))
-        return round((top/bottom),5)
+        return (top/bottom)
 
     # Calcula yk
     #.i
     def getYk(self, b0, b1, xk):        
-        return round((b0 + (b1 * xk)),5)
+        return b0 + (b1 * xk)
 
     # Imprime los elementos calculados 
     #.i      
     def prettyPrint(self, values):
         #[n, r, rSquared, b0, b1, yk, xk]
-        print("N = {}".format(values[0]))
-        print("xk = {}".format(values[6].strip()))
-        print("r = {}".format(values[1]))
-        print("rSquared = {}".format(values[2]))
-        print("b0 = {}".format(values[3]))
-        print("b1 = {}".format(values[4]))
-        print("yk = {}".format(values[5]))
+        print("N = {}".format(round(values[0]),5))
+        print("xk = {}".format(round(values[6]),5))
+        print("r = {}".format(round(values[1]),5))
+        print("rSquared = {}".format(round(values[2]),5))
+        print("b0 = {}".format(round(values[3]),5))
+        print("b1 = {}".format(round(values[4]),5))
+        print("yk = {}".format(round(values[5]),5))
 
 
