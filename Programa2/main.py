@@ -24,13 +24,13 @@ def main():
     print("-------------------------------------------")
     print("-Para terminar la ejecución escribir exit -")
     print("-------------------------------------------")
+    path = input("Escribe el PATH para los archivos con / al final: ")
     fileName = input("Nombre del archivo para leer: ")
     while(fileName != "exit"):
-
         # Verifica que el archivo esté en el mismo directorio
         # Si está, lo leerá y contará las líneas
-        if(fileName != "" and ver.verifica(fileName)):            
-            order.put(lec.procesarArchivo(fileName))
+        if(fileName != "" and ver.verifica(path + fileName)):            
+            order.put(lec.procesarArchivo(path + fileName))
         fileName = input("Nombre del archivo para leer: ")
                 
     #Ordenará e imprimirá los valores
