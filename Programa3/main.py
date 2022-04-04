@@ -25,7 +25,8 @@ def main():
     # Si está, lo leerá y realizará los calculos
     if(ver.verifica(fileName)):            
         calc.getElements(fileName)        
-            
+    
+    input("Presiona ENTER para cerrar.")
 
 if __name__ == "__main__":
     main()
