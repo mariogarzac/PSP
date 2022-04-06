@@ -14,3 +14,6 @@ Lee varios archivos y cuenta las lineas de código por clase. También indica si
 
 ## Programa 3
 Lee un archivo y calcula diferentes valores utilizados en las regresiones.
+
+## Programa 4
+Utiliza la regla de simpson para calcular p dada una x y los grados de libertad
