@@ -20,7 +20,6 @@ def main():
     ver = Verificador()
     stats = Statistics()
     
-
     # Verifica que los datos sean correctos 
     # Si los datos son correctos, se calculará la dist t
 
@@ -28,9 +27,7 @@ def main():
     if (x == -1):
         return 0
     else:
-        print(stats.getConstant(dof))
-
+        print(stats.distT(dof,x))
             
-
 if __name__ == "__main__":
     main()
