@@ -34,7 +34,7 @@ class Verificador:
     
     def verificaDatos(self):
         try:
-            x = int(input("Escribe la x que se utilizará: "))            
+            x = float(input("Escribe la x que se utilizará: "))            
             if (x < 0):
                 print("x debe de ser mayor a 0")
                 return -1, -1
