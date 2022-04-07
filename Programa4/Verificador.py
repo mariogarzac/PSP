@@ -1,50 +1,37 @@
-#!/usr/bin/python
-# Tiene como fin verificar que exista el archivo y/o que no esté vacío 
+#!/usr/bin/env python3
+# Tiene como fin verificar que los valores sean correctos para poder calcular 
+# la distribución T
 #
 # Mario Garza Chapa A01720245
 #
-# Creado: 28/03/2022
-
-import os
+# Creado: 6/04/2022
 
 #.b=15
-class Verificador:
-    # Verifica si el archivo existe o si el archivo está vacío
-    # En caso de que no esté vacío, regresará True para que se ejecute
-    # El lector
-    #.i
-    def verifica(self, fileName):
-        # if para revisar que exista y no esté vacío
-        try:
-            fp = open(fileName, "r") 
-        #Si no existe el archivo      
-        except FileNotFoundError:
-            print("No existe el archivo en el PATH actual, revisa el nombre.")
-            print("Path actual: {}".format(os.getcwd()))
-            return False 
+#.d=12
+#.m=3
 
-        #Si el archivo está vacio 
-        if(os.path.getsize(fileName) == 0):
-            print("Archivo vacio. ")
-            fp.close()
-            return False            
-        
-        fp.close()
-        return True
-    
+class Verificador:
+    # Verifica que los datos sean correctos, en caso de ser incorrectos regresará
+    # -1 para indicarlo.
+    # Si son correctos, regresará los datos que ingreso el usuario.    
+    #.i
     def verificaDatos(self):
         try:
+            # Pide el input de x como float para poder procesar decimales
             x = float(input("Escribe la x que se utilizará: "))            
             if (x < 0):
                 print("x debe de ser mayor a 0")
                 return -1, -1
                 
+            # pide el input como entero porque no se puede tener decimales en los grados de libertad
             dof = int(input("Escribe los grados de libertad: "))
             if (dof < 0):
                 print("dof debe de ser mayor a 0")
                 return -1, -1
+        # si el valor es algo que no sea un número, lo rechazará.
         except ValueError:
             print("ERROR. Los valores deben de ser números. ")
+            print("Los grados de libertad no pueden ser decimales. ")
             return -1, -1
-
+        
         return x,dof
