@@ -7,7 +7,8 @@
 # Creado: 21/04/2022
 
 #.b=15
-#.m=1
+#.m=7
+#.d=4
 
 from Statistics import Statistics
 from Verificador import Verificador
@@ -19,18 +20,23 @@ def main():
     
     # Verifica que los datos sean correctos 
     # Si los datos son correctos, se calculará la dist t
-    # .m=6
     p = ver.verificaP()
-    dof = ver.verificaDof()
-    if (p == -1 or dof == -1):
+    if (p == -1):
         return 0
     else:
-        x = stats.getX(dof,p)
+        dof = ver.verificaDof()
+    
+    if (dof <= 0):
+        return 0
+    else:
+        x = round(stats.getX(dof,p),5)
 
-    # Se imprime los x, dof y p
-    print("x = {:5f}".format(x)) 
-    print("dof = {}".format(dof)) 
-    print("p = {:5f}".format(p)) 
+         # Se imprime los x, dof y p
+        print("p = {:5f}".format(p)) 
+        print("dof = {}".format(dof))
+        print("x = {:5f}".format(x)) 
+     
+    
             
 if __name__ == "__main__":
     main()
