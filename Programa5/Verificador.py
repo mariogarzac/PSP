@@ -8,6 +8,7 @@
 
 #.b=16
 #.m=3
+#.d
 
 class Verificador:
     # Verifica que los datos sean correctos, en caso de ser incorrectos regresará
@@ -22,26 +23,27 @@ class Verificador:
             if (x < 0):
                 print("x debe de ser mayor a 0")
                 return -1
+            else:
+                return x
         
         except ValueError:
             print("ERROR. Los valores deben de ser números. ")            
             return -1
-        finally:
-            return x
 
     #.i
     def verificaDof(self):
         try:           
-            dof = float(input("Escribe los grados de libertad: "))
-            if (dof < 0):
+            dof = int(input("Escribe los grados de libertad: "))
+            if (dof <= 0):
                 print("dof debe de ser mayor a 0")
                 return -1
+            else:
+                return dof
         except ValueError:
             print("ERROR. Los valores deben de ser números. ")
             print("Los grados de libertad no pueden ser decimales. ")
+            return -1
         
-        finally:
-            return dof
 
     #.i
     def verificaP(self):
@@ -49,12 +51,12 @@ class Verificador:
             p = float(input("Escribe la p que se utilizará: "))
             if (p < 0 or p > 0.5):                
                 print("p debe de ser mayor a 0 y menor que 0.5")
-                return -1, -1            
+                return -1
+            else:
+                return p          
         except ValueError:
             print("ERROR. Los valores deben de ser números. ")
-            print("Los grados de libertad no pueden ser decimales. ")
-        
-        finally:
-            return p
+            print("Los grados de libertad no pueden ser decimales. ")    
+            return -1    
 
         
