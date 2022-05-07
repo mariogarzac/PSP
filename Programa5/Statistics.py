@@ -7,6 +7,8 @@
 # Creado: 22s/04/2022
 
 #.b=44
+#.d=1
+#.m=2
 
 import math
 
