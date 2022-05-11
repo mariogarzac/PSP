@@ -6,15 +6,15 @@
 #
 # Creado: 28/03/2022
 
-from Statistics import Statistics
 from Verificador import Verificador
+from Calculador import Calculador
 
 #.m=3
 # MAIN DEL PROGRAMA
 def main():
 
     ver = Verificador()
-    stats = Statistics()
+    calc = Calculador()
     
     #Se lee el nombre del archivo
     fileName = input("Nombre del archvio a leer: ")
@@ -22,9 +22,9 @@ def main():
     # Verifica que el archivo esté en el PATH
     # Si está, lo leerá y realizará los calculos
     if(ver.verificaArchivo(fileName)):            
-        stats.getElements(fileName)        
+        calc.getElements(fileName)        
     
     input("Presiona ENTER para cerrar.")
-    
+
 if __name__ == "__main__":
     main()
