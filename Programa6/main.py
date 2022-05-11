@@ -1,42 +1,30 @@
-# !/usr/bin/env python3
-# Este programa calcula p dada una x y los grados de libertad
-# 
+#!/usr/bin/python
+# Este programa tiene como fín leer archivos y calcular 
+# numero de pares, xk, r, r^2, b0, b1 y yk
 #
 # Mario Garza Chapa A01720245
 #
-# Creado: 21/04/2022
-
-#.b=15
-#.m=7
-#.d=4
+# Creado: 28/03/2022
 
 from Statistics import Statistics
 from Verificador import Verificador
 
+#.m=3
 # MAIN DEL PROGRAMA
 def main():
+
     ver = Verificador()
     stats = Statistics()
     
-    # Verifica que los datos sean correctos 
-    # Si los datos son correctos, se calculará la dist t
-    p = ver.verificaP()
-    if (p == -1):
-        return 0
-    else:
-        dof = ver.verificaDof()
-    
-    if (dof <= 0):
-        return 0
-    else:
-        x = round(stats.getX(dof,p),5)
+    #Se lee el nombre del archivo
+    fileName = input("Nombre del archvio a leer: ")
 
-         # Se imprime los x, dof y p
-        print("p = {:5f}".format(p)) 
-        print("dof = {}".format(dof))
-        print("x = {:5f}".format(x)) 
-     
+    # Verifica que el archivo esté en el PATH
+    # Si está, lo leerá y realizará los calculos
+    if(ver.verificaArchivo(fileName)):            
+        stats.getElements(fileName)        
     
-            
+    input("Presiona ENTER para cerrar.")
+    
 if __name__ == "__main__":
     main()
