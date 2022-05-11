@@ -10,6 +10,8 @@
 #.m=3
 #.d
 
+import os
+
 class Verificador:
     # Verifica que los datos sean correctos, en caso de ser incorrectos regresará
     # -1 para indicarlo.
@@ -44,7 +46,6 @@ class Verificador:
             print("Los grados de libertad no pueden ser decimales. ")
             return -1
         
-
     #.i
     def verificaP(self):
         try:
@@ -59,4 +60,23 @@ class Verificador:
             print("Los grados de libertad no pueden ser decimales. ")    
             return -1    
 
+       #.i
+    def verificaArchivo(self, fileName):
+        # if para revisar que exista y no esté vacío
+        try:
+            fp = open(fileName, "r") 
+            
+        #Si no existe el archivo      
+        except FileNotFoundError:
+            print("No existe el archivo en el PATH actual, revisa el nombre.")
+            print("Path actual: {}".format(os.getcwd()))
+            return False 
+
+        #Si el archivo está vacio 
+        if(os.path.getsize(fileName) == 0):
+            print("Archivo vacio. ")
+            fp.close()
+            return False  
         
+        fp.close()
+        return True 
