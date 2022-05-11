@@ -1,15 +1,16 @@
 #!/usr/bin/python
 # Este programa tiene como fín leer archivos y calcular 
-# numero de pares, xk, r, r^2, b0, b1 y yk
+# numero de pares, xk, r, r^2, b0, b1 y yk, sig, rango, upi y lpi
 #
 # Mario Garza Chapa A01720245
 #
-# Creado: 28/03/2022
+# Creado: 10/05/2022
 
 from Verificador import Verificador
 from Calculador import Calculador
 
-#.m=3
+#.b=11
+
 # MAIN DEL PROGRAMA
 def main():
 

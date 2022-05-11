@@ -1,19 +1,18 @@
 #!/usr/bin/python
 # 
-# Clase lector que hará todo el procesamiento de los archivos
-# Esto incluye contar las lineas y sus respectivas bases, items, modificaciones y agregados
-# al igual que imprimir los resutlados
-#
+# Clase Calculador que hará todo el procesamiento de los archivos
+# imprime los valores n, xk, r, rSquared, b0, b1, yk, sig, ran,  UPI, LPI
+# 
 # Mario Garza Chapa A01720245
 #
-# Creado: 28/03/2022
+# Creado: 10/05/2022
 
+#.b=61
 
 import math
-import statistics
 from Statistics import Statistics
-class Calculador:
-    
+
+class Calculador:    
 # Función para recibir los elementos calculados
     #.i
     def getElements(self, fileName):
@@ -69,7 +68,7 @@ class Calculador:
         UPI = yk + ran
         LPI = 0 if (yk - ran < 0) else yk - ran
 
-        
+        #.m
         values = [n, xk, r, rSquared, b0, b1, yk, sig, ran,  UPI, LPI]
         return values   
 
@@ -147,3 +146,4 @@ class Calculador:
         print("range = {:.5f}".format(values[8]))
         print("UPI = {:.5f}".format(values[9]))
         print("LPI = {:.5f}".format(values[10]))
+        #.m=3

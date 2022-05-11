@@ -75,7 +75,7 @@ class Lector:
         #Tomará un queue que se manda desde el main e irá acomodando en sus respectivas categorias
         while (not order.empty()): 
             data = order.get()
-            if (data[3] > 0 and (data[5] > 0 and data[4] > 0 and data[6] > 0)):                
+            if (data[3] > 0 and (data[5] > 0 or data[4] > 0 or data[6] > 0)):                
                 base.put(data)
             elif (data[3] == 0 and data[5] == 0 and data[4] == 0 and data[6] > 0):                
                 nueva.put(data)
